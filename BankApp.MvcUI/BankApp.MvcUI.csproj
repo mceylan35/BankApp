@@ -142,7 +142,15 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MusteriController.cs" />
     <Compile Include="Entities\BankApp.cs" />
+    <Compile Include="Entities\database_firewall_rules.cs" />
+    <Compile Include="Entities\sysdiagrams.cs" />
+    <Compile Include="Entities\tbl_Hesaplar.cs" />
+    <Compile Include="Entities\tbl_Iletisim.cs" />
+    <Compile Include="Entities\tbl_Islemler.cs" />
+    <Compile Include="Entities\tbl_Kredi.cs" />
+    <Compile Include="Entities\tbl_Musteriler.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -184,6 +192,11 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Musteri\Create.cshtml" />
+    <Content Include="Views\Musteri\Delete.cshtml" />
+    <Content Include="Views\Musteri\Details.cshtml" />
+    <Content Include="Views\Musteri\Edit.cshtml" />
+    <Content Include="Views\Musteri\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
