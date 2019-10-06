@@ -143,6 +143,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MusteriController.cs" />
+    <Compile Include="Controllers\qwewqController.cs" />
     <Compile Include="Entities\BankApp.cs" />
     <Compile Include="Entities\database_firewall_rules.cs" />
     <Compile Include="Entities\sysdiagrams.cs" />
@@ -201,6 +202,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\qwewq\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
