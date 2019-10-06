@@ -11,6 +11,7 @@ namespace BankApp.MvcUI.Controllers
         // GET: qwewq
         public ActionResult Index()
         {
+        string selam="asd";
             return View();
         }
     }
