@@ -1,0 +1,81 @@
+﻿@model IEnumerable<BankApp.MvcUI.Entities.tbl_Musteriler>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TCKN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sifre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.isim)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.soyisim)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cinsiyet)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dogumTarihi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.kizlikSoyadi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.musteriTipi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.musteriPuani)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TCKN)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sifre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.isim)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.soyisim)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cinsiyet)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dogumTarihi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.kizlikSoyadi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.musteriTipi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.musteriPuani)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.musteriNo }) |
+            @Html.ActionLink("Details", "Details", new { id=item.musteriNo }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.musteriNo })
+        </td>
+    </tr>
+}
+
+</table>

@@ -75,7 +75,6 @@ C:\Users\Mehmet\source\repos\BankApp\BankApp.MvcUI\bin\System.Net.Http.Formattin
 C:\Users\Mehmet\source\repos\BankApp\BankApp.MvcUI\bin\System.Web.Http.xml
 C:\Users\Mehmet\source\repos\BankApp\BankApp.MvcUI\bin\System.Web.Http.WebHost.xml
 C:\Users\Mehmet\source\repos\BankApp\BankApp.MvcUI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\Mehmet\source\repos\BankApp\BankApp.MvcUI\obj\Debug\BankApp.MvcUI.csprojAssemblyReference.cache
 C:\Users\Mehmet\source\repos\BankApp\BankApp.MvcUI\obj\Debug\BankApp.MvcUI.csproj.CoreCompileInputs.cache
 C:\Users\Mehmet\source\repos\BankApp\BankApp.MvcUI\obj\Debug\BankApp.MvcUI.csproj.CopyComplete
 C:\Users\Mehmet\source\repos\BankApp\BankApp.MvcUI\obj\Debug\BankApp.MvcUI.dll
@@ -84,3 +83,4 @@ C:\Users\Mehmet\source\repos\BankApp\BankApp.MvcUI\bin\EntityFramework.dll
 C:\Users\Mehmet\source\repos\BankApp\BankApp.MvcUI\bin\EntityFramework.SqlServer.dll
 C:\Users\Mehmet\source\repos\BankApp\BankApp.MvcUI\bin\EntityFramework.xml
 C:\Users\Mehmet\source\repos\BankApp\BankApp.MvcUI\bin\EntityFramework.SqlServer.xml
+C:\Users\Mehmet\source\repos\BankApp\BankApp.MvcUI\obj\Debug\BankApp.MvcUI.csprojAssemblyReference.cache
