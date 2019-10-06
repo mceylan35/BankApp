@@ -80,3 +80,7 @@ C:\Users\Mehmet\source\repos\BankApp\BankApp.MvcUI\obj\Debug\BankApp.MvcUI.cspro
 C:\Users\Mehmet\source\repos\BankApp\BankApp.MvcUI\obj\Debug\BankApp.MvcUI.csproj.CopyComplete
 C:\Users\Mehmet\source\repos\BankApp\BankApp.MvcUI\obj\Debug\BankApp.MvcUI.dll
 C:\Users\Mehmet\source\repos\BankApp\BankApp.MvcUI\obj\Debug\BankApp.MvcUI.pdb
+C:\Users\UMUT CAN\Documents\GitHub\BankApp\BankApp.MvcUI\obj\Debug\BankApp.MvcUI.csprojAssemblyReference.cache
+C:\Users\UMUT CAN\Documents\GitHub\BankApp\BankApp.MvcUI\obj\Debug\BankApp.MvcUI.csproj.CoreCompileInputs.cache
+C:\Users\UMUT CAN\Documents\GitHub\BankApp\BankApp.MvcUI\obj\Debug\BankApp.MvcUI.dll
+C:\Users\UMUT CAN\Documents\GitHub\BankApp\BankApp.MvcUI\obj\Debug\BankApp.MvcUI.pdb
