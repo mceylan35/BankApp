@@ -72,7 +72,7 @@ namespace BankApp.MvcUI.Controllers
             db.tbl_Musteriler.Add(register);
             db.tbl_Iletisim.Add(register2);
             db.SaveChanges();
-            return View(register);
+            return RedirectToAction("Login");
         }
 
         // GET: Kullanici/Edit/5

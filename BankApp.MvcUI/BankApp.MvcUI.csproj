@@ -143,7 +143,6 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KullaniciController.cs" />
-    <Compile Include="Controllers\qwewqController.cs" />
     <Compile Include="Entities\Bankmodel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -338,6 +337,7 @@
     <Content Include="Content\js\wizard\jquery.bootstrap.wizard.min.js" />
     <Content Include="Content\js\wizard\wizard-active.js" />
     <Content Include="Content\js\wow.min.js" />
+    <Content Include="Content\style.css" />
     <Content Include="Entities\Bankmodel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Bankmodel.edmx</DependentUpon>

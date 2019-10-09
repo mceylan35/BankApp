@@ -9,26 +9,30 @@
                 <div class="input-group">
                     <span class="input-group-addon nk-ic-st-pro"><i class="notika-icon notika-support"></i></span>
                     <div class="nk-int-st">
-                        <input type="text" class="form-control" placeholder="Tc Kimlik No" name="TCKN">
-                       
+                        <input type="text" class="form-control" placeholder="Tc Kimlik No" name="TCKN" required>
+                        @Html.ValidationMessageFor(model => model.TCKN, "", new { @class = "text-danger" })
+
                     </div>
                 </div>
                 <div class="input-group mg-t-15">
-                    <span class="input-group-addon nk-ic-st-pro"><i class="notika-icon notika-edit"></i></span>
+                    <span class="input-group-addon nk-ic-st-pro"><i class="notika-icon notika-support"></i></span>
                     <div class="nk-int-st">
-                        <input type="text" class="form-control" placeholder="İsim" name="isim">
+                        <input type="text" class="form-control" placeholder="İsim" name="isim" required>
+                        @Html.ValidationMessageFor(model => model.isim, "", new { @class = "text-danger" })
                     </div>
                 </div>
                 <div class="input-group mg-t-15">
-                    <span class="input-group-addon nk-ic-st-pro"><i class="notika-icon notika-edit"></i></span>
+                    <span class="input-group-addon nk-ic-st-pro"><i class="notika-icon notika-support"></i></span>
                     <div class="nk-int-st">
-                        <input type="text" class="form-control" placeholder="Soy isim" name="soyisim">
+                        <input type="text" class="form-control" placeholder="Soy isim" name="soyisim" required>
+                        @Html.ValidationMessageFor(model => model.soyisim, "", new { @class = "text-danger" })
                     </div>
                 </div>
                 <div class="input-group mg-t-15">
-                    <span class="input-group-addon nk-ic-st-pro"><i class="notika-icon notika-edit"></i></span>
+                    <span class="input-group-addon nk-ic-st-pro"><i class="notika-icon notika-plus-symbol"></i></span>
                     <div class="nk-int-st">
-                        <input type="password" class="form-control" placeholder="Şifre" name="sifre">
+                        <input type="password" class="form-control" placeholder="Şifre" name="sifre" required>
+                        @Html.ValidationMessageFor(model => model.sifre, "", new { @class = "text-danger" })
                     </div>
                 </div>
 
@@ -41,39 +45,43 @@
                     </label>
                 </div>
                 <div class="input-group mg-t-15">
-                    <span class="input-group-addon nk-ic-st-pro"><i class="notika-icon notika-edit"></i></span>
+                    <span class="input-group-addon nk-ic-st-pro"><i class="notika-icon notika-calendar"></i></span>
                     <div class="nk-int-st">
-                        <input type="date" class="form-control" name="dogumTarihi">
+                        <input type="date" class="form-control" name="dogumTarihi" required>
+                        @Html.ValidationMessageFor(model => model.dogumTarihi, "", new { @class = "text-danger" })
                     </div>
                 </div>
                 <div class="input-group mg-t-15">
-                    <span class="input-group-addon nk-ic-st-pro"><i class="notika-icon notika-edit"></i></span>
+                    <span class="input-group-addon nk-ic-st-pro"><i class="notika-icon notika-support"></i></span>
                     <div class="nk-int-st">
-                        <input type="text" class="form-control" placeholder="Anne kızlık soyadı" name="kizlikSoyadi">
+                        <input type="text" class="form-control" placeholder="Anne kızlık soyadı" name="kizlikSoyadi" required>
+                        @Html.ValidationMessageFor(model => model.kizlikSoyadi, "", new { @class = "text-danger" })
                     </div>
                 </div>
                 <div class="input-group mg-t-15">
-                    <span class="input-group-addon nk-ic-st-pro"><i class="notika-icon notika-edit"></i></span>
+                    <span class="input-group-addon nk-ic-st-pro"><i class="notika-icon notika-mail"></i></span>
                     <div class="nk-int-st">
-                        <input type="email" class="form-control" placeholder="Mail" name="mail">
+                        <input type="email" class="form-control" placeholder="Mail" name="mail" required>
+                        
                     </div>
                 </div>
                 <div class="input-group mg-t-15">
-                    <span class="input-group-addon nk-ic-st-pro"><i class="notika-icon notika-edit"></i></span>
+                    <span class="input-group-addon nk-ic-st-pro"><i class="notika-icon notika-phone"></i></span>
                     <div class="nk-int-st">
-                        <input type="tel" class="form-control" placeholder="Cep Telefonu" name="cepTelefonu">
+                        <input type="tel" class="form-control" placeholder="Cep Telefonu" name="cepTelefonu" required>
+                       
                     </div>
                 </div>
                 <div class="input-group mg-t-15">
-                    <span class="input-group-addon nk-ic-st-pro"><i class="notika-icon notika-edit"></i></span>
+                    <span class="input-group-addon nk-ic-st-pro"><i class="notika-icon notika-phone"></i></span>
                     <div class="nk-int-st">
-                        <input type="tel" class="form-control" placeholder="Ev Telefonu" name="evTelefonu">
+                        <input type="tel" class="form-control" placeholder="Ev Telefonu" name="evTelefonu" required>
                     </div>
                 </div>
                 <div class="input-group mg-t-15">
-                    <span class="input-group-addon nk-ic-st-pro"><i class="notika-icon notika-edit"></i></span>
+                    <span class="input-group-addon nk-ic-st-pro"><i class="notika-icon notika-house"></i></span>
                     <div class="nk-int-st">
-                        <input type="text" class="form-control" placeholder="Müşteri Adres" name="musteriAdresi">
+                        <input type="text" class="form-control" placeholder="Müşteri Adres" name="musteriAdresi" required>
                     </div>
                 </div>
                 <div class="fm-checkbox">
