@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 using BankApp.MvcUI.Entities;
 using BankApp.MvcUI.ModelView;
 
@@ -27,6 +28,7 @@ namespace BankApp.MvcUI.Controllers
             var kullanici = db.tbl_Musteriler.FirstOrDefault(x=>x.TCKN == tcNo && x.sifre == sifre);
             if (kullanici != null)
             {
+                FormsAuthentication.SetAuthCookie(kullanici.musteriNo.ToString(), false);
                 return RedirectToAction("Index","Home");
             }
             else
@@ -66,7 +68,9 @@ namespace BankApp.MvcUI.Controllers
         [HttpPost]
         public ActionResult Create(tbl_Musteriler register,tbl_Iletisim register2)
         {
-            if (ModelState.IsValid)
+            var musteri = db.tbl_Musteriler.Where(i => i.TCKN == register.TCKN);
+            var ilet = db.tbl_Iletisim.Where(i => i.mail == register2.mail);
+            if (ModelState.IsValid && musteri==null && ilet==null)
             {
                 Random r = new Random();
                 int musteriNo = r.Next(111111, 999999);
@@ -75,6 +79,10 @@ namespace BankApp.MvcUI.Controllers
                 db.tbl_Iletisim.Add(register2);
                 db.SaveChanges();
                 return RedirectToAction("Login");
+            }
+            else 
+            {
+                ViewBag.Hata = "Bu Kişi Kayıtlı";
             }
             return View(register);
             
