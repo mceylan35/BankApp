@@ -66,13 +66,18 @@ namespace BankApp.MvcUI.Controllers
         [HttpPost]
         public ActionResult Create(tbl_Musteriler register,tbl_Iletisim register2)
         {
-            Random r = new Random();
-            int musteriNo = r.Next(111111, 999999);
-            register.musteriNo = musteriNo;
-            db.tbl_Musteriler.Add(register);
-            db.tbl_Iletisim.Add(register2);
-            db.SaveChanges();
-            return RedirectToAction("Login");
+            if (ModelState.IsValid)
+            {
+                Random r = new Random();
+                int musteriNo = r.Next(111111, 999999);
+                register.musteriNo = musteriNo;
+                db.tbl_Musteriler.Add(register);
+                db.tbl_Iletisim.Add(register2);
+                db.SaveChanges();
+                return RedirectToAction("Login");
+            }
+            return View(register);
+            
         }
 
         // GET: Kullanici/Edit/5
