@@ -5,11 +5,17 @@
     <div class="nk-block toggled" id="l-login">
 
         <div class="nk-form">
+            @if (ViewBag.Hata != null)
+            {
+                <div class="alert alert-danger" role="alert">@ViewBag.Hata</div>
+            }
+           
+
             <form method="post" action="/Kullanici/Create">
                 <div class="input-group">
                     <span class="input-group-addon nk-ic-st-pro"><i class="notika-icon notika-support"></i></span>
                     <div class="nk-int-st">
-                        <input type="text" class="form-control" placeholder="Tc Kimlik No" name="TCKN" required>
+                        <input type="text" maxlength="11" pattern="\d{11}" title="Lütfen 11 Haneli TC Kimlik Numaranızı Giriniz." class="form-control" placeholder="Tc Kimlik No" name="TCKN" required>
                         @Html.ValidationMessageFor(model => model.TCKN, "", new { @class = "text-danger" })
 
                     </div>
@@ -36,7 +42,7 @@
                     </div>
                 </div>
 
-               <div class="radio">
+                <div class="radio">
                     <label>
                         @Html.RadioButtonFor(m => m.cinsiyet, true) Erkek
                     </label>
@@ -62,14 +68,14 @@
                     <span class="input-group-addon nk-ic-st-pro"><i class="notika-icon notika-mail"></i></span>
                     <div class="nk-int-st">
                         <input type="email" class="form-control" placeholder="Mail" name="mail" required>
-                        
+
                     </div>
                 </div>
                 <div class="input-group mg-t-15">
                     <span class="input-group-addon nk-ic-st-pro"><i class="notika-icon notika-phone"></i></span>
                     <div class="nk-int-st">
-                        <input type="tel" class="form-control" placeholder="Cep Telefonu" name="cepTelefonu" required>
-                       
+                        <input type="tel" min="8" maxlength="13" class="form-control" placeholder="Cep Telefonu" name="cepTelefonu" required>
+
                     </div>
                 </div>
                 <div class="input-group mg-t-15">
@@ -92,9 +98,9 @@
             </form>
         </div>
 
-        <div class="nk-navigation rg-ic-stl">
-            <a href="/Kullanici/Login" data-ma-action="nk-login-switch" data-ma-block="#l-login"><i class="notika-icon notika-right-arrow"></i> <span>Sign in</span></a>
-            <a href="" data-ma-action="nk-login-switch" data-ma-block="#l-forget-password"><i>?</i> <span>Forgot Password</span></a>
+            <div class="nk-navigation rg-ic-stl">
+                <a href="/Kullanici/Login" data-ma-action="nk-login-switch" data-ma-block="#l-login"><i class="notika-icon notika-right-arrow"></i> <span>Sign in</span></a>
+                <a href="" data-ma-action="nk-login-switch" data-ma-block="#l-forget-password"><i>?</i> <span>Forgot Password</span></a>
+            </div>
         </div>
-    </div>
 </div>
