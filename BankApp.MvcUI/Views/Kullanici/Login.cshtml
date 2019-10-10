@@ -18,18 +18,16 @@
                 <div class="input-group">
                     <span class="input-group-addon nk-ic-st-pro"><i class="notika-icon notika-support"></i></span>
                     <div class="nk-int-st">
-                        <input type="text" class="form-control" placeholder="Tc Kimlik No" name="tcNo">
+                        <input type="text" maxlength="11" pattern="\d{11}" class="form-control sayi " placeholder="Tc Kimlik No"  name="tcNo">
                     </div>
                 </div>
                 <div class="input-group mg-t-15">
                     <span class="input-group-addon nk-ic-st-pro"><i class="notika-icon notika-edit"></i></span>
                     <div class="nk-int-st">
-                        <input type="password" class="form-control" placeholder="Şifre" name="sifre">
+                        <input type="password" min="4" max="8" maxlength="8" class="form-control" placeholder="Şifre" name="sifre">
                     </div>
                 </div>
-                <div class="fm-checkbox">
-                    <label><input type="checkbox" class="i-checks"> <i></i> Keep me signed in</label>
-                </div>
+                
                 <button type="submit" href="Login" data-ma-action="nk-login-switch" data-ma-block="#l-register" class="btn btn-login btn-success btn-float"><i class="notika-icon notika-right-arrow right-arrow-ant"></i></input>
 
             </form>
@@ -37,7 +35,7 @@
 
         <div class="nk-navigation nk-lg-ic">
             <a href="/Kullanici/Create" data-ma-action="nk-login-switch" data-ma-block="#l-register"><i class="notika-icon notika-plus-symbol"></i> <span>Register</span></a>
-            <a href="#" data-ma-action="nk-login-switch" data-ma-block="#l-forget-password"><i>?</i> <span>Forgot Password</span></a>
+            
         </div>
     </div>
 
