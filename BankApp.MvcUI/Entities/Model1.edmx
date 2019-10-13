@@ -4,24 +4,20 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="yazilimbakimiModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="yazilimbakimiModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="tbl_Hesaplar">
           <Key>
             <PropertyRef Name="hesapId" />
           </Key>
           <Property Name="hesapId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="IBAN" Type="nvarchar" MaxLength="26" />
-          <Property Name="musteriNo" Type="int" />
+          <Property Name="musteriNo" Type="nvarchar" MaxLength="9" />
           <Property Name="hesapNumarasi" Type="nvarchar" MaxLength="20" />
           <Property Name="aktiflik" Type="bit" />
-          <Property Name="hesapTipi" Type="bit" />
           <Property Name="bakiye" Type="money" />
-          <Property Name="paraTipi" Type="nvarchar" MaxLength="20" />
           <Property Name="krediLimiti" Type="int" />
           <Property Name="hesapAcilisTarihi" Type="datetime" />
           <Property Name="hesapKapanisTarihi" Type="datetime" />
-          <Property Name="hesapPuani" Type="int" />
-          <Property Name="ekNo" Type="smallint" />
+          <Property Name="ekNo" Type="int" />
         </EntityType>
         <EntityType Name="tbl_HGS">
           <Key>
@@ -35,7 +31,7 @@
             <PropertyRef Name="iletisimId" />
           </Key>
           <Property Name="iletisimId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="musteriId" Type="int" />
+          <Property Name="musteriId" Type="nvarchar" MaxLength="9" />
           <Property Name="mail" Type="nvarchar" MaxLength="50" />
           <Property Name="cepTelefonu" Type="nvarchar" MaxLength="50" />
           <Property Name="evTelefonu" Type="nvarchar" MaxLength="50" />
@@ -45,7 +41,7 @@
           <Key>
             <PropertyRef Name="musteriNo" />
           </Key>
-          <Property Name="musteriNo" Type="int" Nullable="false" />
+          <Property Name="musteriNo" Type="nvarchar" MaxLength="9" Nullable="false" />
           <Property Name="TCKN" Type="nvarchar" MaxLength="11" />
           <Property Name="sifre" Type="nvarchar" MaxLength="50" />
           <Property Name="isim" Type="nvarchar" MaxLength="50" />
@@ -94,29 +90,38 @@
             <End Role="tbl_Iletisim" EntitySet="tbl_Iletisim" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="yazilimbakimiModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="yazilimbakimiEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tbl_Hesaplar" EntityType="yazilimbakimiModel.tbl_Hesaplar" />
+          <EntitySet Name="tbl_HGS" EntityType="yazilimbakimiModel.tbl_HGS" />
+          <EntitySet Name="tbl_Iletisim" EntityType="yazilimbakimiModel.tbl_Iletisim" />
+          <EntitySet Name="tbl_Musteriler" EntityType="yazilimbakimiModel.tbl_Musteriler" />
+          <AssociationSet Name="FK_tbl_Hesaplar_tbl_Musteriler1" Association="yazilimbakimiModel.FK_tbl_Hesaplar_tbl_Musteriler1">
+            <End Role="tbl_Musteriler" EntitySet="tbl_Musteriler" />
+            <End Role="tbl_Hesaplar" EntitySet="tbl_Hesaplar" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_Iletisim_tbl_Musteriler" Association="yazilimbakimiModel.FK_tbl_Iletisim_tbl_Musteriler">
+            <End Role="tbl_Musteriler" EntitySet="tbl_Musteriler" />
+            <End Role="tbl_Iletisim" EntitySet="tbl_Iletisim" />
+          </AssociationSet>
+        </EntityContainer>
         <EntityType Name="tbl_Hesaplar">
           <Key>
             <PropertyRef Name="hesapId" />
           </Key>
           <Property Name="hesapId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="IBAN" Type="String" MaxLength="26" FixedLength="false" Unicode="true" />
-          <Property Name="musteriNo" Type="Int32" />
+          <Property Name="musteriNo" Type="String" MaxLength="9" FixedLength="false" Unicode="true" />
           <Property Name="hesapNumarasi" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="aktiflik" Type="Boolean" />
-          <Property Name="hesapTipi" Type="Boolean" />
           <Property Name="bakiye" Type="Decimal" Precision="19" Scale="4" />
-          <Property Name="paraTipi" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="krediLimiti" Type="Int32" />
           <Property Name="hesapAcilisTarihi" Type="DateTime" Precision="3" />
           <Property Name="hesapKapanisTarihi" Type="DateTime" Precision="3" />
-          <Property Name="hesapPuani" Type="Int32" />
-          <Property Name="ekNo" Type="Int16" />
-          <NavigationProperty Name="tbl_Musteriler" Relationship="Self.FK_tbl_Hesaplar_tbl_Musteriler1" FromRole="tbl_Hesaplar" ToRole="tbl_Musteriler" />
+          <Property Name="ekNo" Type="Int32" />
+          <NavigationProperty Name="tbl_Musteriler" Relationship="yazilimbakimiModel.FK_tbl_Hesaplar_tbl_Musteriler1" FromRole="tbl_Hesaplar" ToRole="tbl_Musteriler" />
         </EntityType>
         <EntityType Name="tbl_HGS">
           <Key>
@@ -130,18 +135,18 @@
             <PropertyRef Name="iletisimId" />
           </Key>
           <Property Name="iletisimId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="musteriId" Type="Int32" />
+          <Property Name="musteriId" Type="String" MaxLength="9" FixedLength="false" Unicode="true" />
           <Property Name="mail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="cepTelefonu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="evTelefonu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="musteriAdresi" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="tbl_Musteriler" Relationship="Self.FK_tbl_Iletisim_tbl_Musteriler" FromRole="tbl_Iletisim" ToRole="tbl_Musteriler" />
+          <NavigationProperty Name="tbl_Musteriler" Relationship="yazilimbakimiModel.FK_tbl_Iletisim_tbl_Musteriler" FromRole="tbl_Iletisim" ToRole="tbl_Musteriler" />
         </EntityType>
         <EntityType Name="tbl_Musteriler">
           <Key>
             <PropertyRef Name="musteriNo" />
           </Key>
-          <Property Name="musteriNo" Type="Int32" Nullable="false" />
+          <Property Name="musteriNo" Type="String" Nullable="false" MaxLength="9" FixedLength="false" Unicode="true" />
           <Property Name="TCKN" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
           <Property Name="sifre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="isim" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -151,12 +156,12 @@
           <Property Name="kizlikSoyadi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="musteriTipi" Type="Boolean" />
           <Property Name="musteriPuani" Type="Int32" />
-          <NavigationProperty Name="tbl_Hesaplar" Relationship="Self.FK_tbl_Hesaplar_tbl_Musteriler1" FromRole="tbl_Musteriler" ToRole="tbl_Hesaplar" />
-          <NavigationProperty Name="tbl_Iletisim" Relationship="Self.FK_tbl_Iletisim_tbl_Musteriler" FromRole="tbl_Musteriler" ToRole="tbl_Iletisim" />
+          <NavigationProperty Name="tbl_Hesaplar" Relationship="yazilimbakimiModel.FK_tbl_Hesaplar_tbl_Musteriler1" FromRole="tbl_Musteriler" ToRole="tbl_Hesaplar" />
+          <NavigationProperty Name="tbl_Iletisim" Relationship="yazilimbakimiModel.FK_tbl_Iletisim_tbl_Musteriler" FromRole="tbl_Musteriler" ToRole="tbl_Iletisim" />
         </EntityType>
         <Association Name="FK_tbl_Hesaplar_tbl_Musteriler1">
-          <End Role="tbl_Musteriler" Type="Self.tbl_Musteriler" Multiplicity="0..1" />
-          <End Role="tbl_Hesaplar" Type="Self.tbl_Hesaplar" Multiplicity="*" />
+          <End Type="yazilimbakimiModel.tbl_Musteriler" Role="tbl_Musteriler" Multiplicity="0..1" />
+          <End Type="yazilimbakimiModel.tbl_Hesaplar" Role="tbl_Hesaplar" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="tbl_Musteriler">
               <PropertyRef Name="musteriNo" />
@@ -167,8 +172,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_tbl_Iletisim_tbl_Musteriler">
-          <End Role="tbl_Musteriler" Type="Self.tbl_Musteriler" Multiplicity="0..1" />
-          <End Role="tbl_Iletisim" Type="Self.tbl_Iletisim" Multiplicity="*" />
+          <End Type="yazilimbakimiModel.tbl_Musteriler" Role="tbl_Musteriler" Multiplicity="0..1" />
+          <End Type="yazilimbakimiModel.tbl_Iletisim" Role="tbl_Iletisim" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="tbl_Musteriler">
               <PropertyRef Name="musteriNo" />
@@ -178,21 +183,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="yazilimbakimiEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="tbl_Hesaplar" EntityType="Self.tbl_Hesaplar" />
-          <EntitySet Name="tbl_HGS" EntityType="Self.tbl_HGS" />
-          <EntitySet Name="tbl_Iletisim" EntityType="Self.tbl_Iletisim" />
-          <EntitySet Name="tbl_Musteriler" EntityType="Self.tbl_Musteriler" />
-          <AssociationSet Name="FK_tbl_Hesaplar_tbl_Musteriler1" Association="Self.FK_tbl_Hesaplar_tbl_Musteriler1">
-            <End Role="tbl_Musteriler" EntitySet="tbl_Musteriler" />
-            <End Role="tbl_Hesaplar" EntitySet="tbl_Hesaplar" />
-          </AssociationSet>
-          <AssociationSet Name="FK_tbl_Iletisim_tbl_Musteriler" Association="Self.FK_tbl_Iletisim_tbl_Musteriler">
-            <End Role="tbl_Musteriler" EntitySet="tbl_Musteriler" />
-            <End Role="tbl_Iletisim" EntitySet="tbl_Iletisim" />
-          </AssociationSet>
-        </EntityContainer>
-      </Schema>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -201,55 +192,51 @@
           <EntitySetMapping Name="tbl_Hesaplar">
             <EntityTypeMapping TypeName="yazilimbakimiModel.tbl_Hesaplar">
               <MappingFragment StoreEntitySet="tbl_Hesaplar">
-                <ScalarProperty Name="hesapId" ColumnName="hesapId" />
-                <ScalarProperty Name="IBAN" ColumnName="IBAN" />
-                <ScalarProperty Name="musteriNo" ColumnName="musteriNo" />
-                <ScalarProperty Name="hesapNumarasi" ColumnName="hesapNumarasi" />
-                <ScalarProperty Name="aktiflik" ColumnName="aktiflik" />
-                <ScalarProperty Name="hesapTipi" ColumnName="hesapTipi" />
-                <ScalarProperty Name="bakiye" ColumnName="bakiye" />
-                <ScalarProperty Name="paraTipi" ColumnName="paraTipi" />
-                <ScalarProperty Name="krediLimiti" ColumnName="krediLimiti" />
-                <ScalarProperty Name="hesapAcilisTarihi" ColumnName="hesapAcilisTarihi" />
-                <ScalarProperty Name="hesapKapanisTarihi" ColumnName="hesapKapanisTarihi" />
-                <ScalarProperty Name="hesapPuani" ColumnName="hesapPuani" />
                 <ScalarProperty Name="ekNo" ColumnName="ekNo" />
+                <ScalarProperty Name="hesapKapanisTarihi" ColumnName="hesapKapanisTarihi" />
+                <ScalarProperty Name="hesapAcilisTarihi" ColumnName="hesapAcilisTarihi" />
+                <ScalarProperty Name="krediLimiti" ColumnName="krediLimiti" />
+                <ScalarProperty Name="bakiye" ColumnName="bakiye" />
+                <ScalarProperty Name="aktiflik" ColumnName="aktiflik" />
+                <ScalarProperty Name="hesapNumarasi" ColumnName="hesapNumarasi" />
+                <ScalarProperty Name="musteriNo" ColumnName="musteriNo" />
+                <ScalarProperty Name="hesapId" ColumnName="hesapId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tbl_HGS">
             <EntityTypeMapping TypeName="yazilimbakimiModel.tbl_HGS">
               <MappingFragment StoreEntitySet="tbl_HGS">
-                <ScalarProperty Name="hgsNo" ColumnName="hgsNo" />
                 <ScalarProperty Name="bakiye" ColumnName="bakiye" />
+                <ScalarProperty Name="hgsNo" ColumnName="hgsNo" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tbl_Iletisim">
             <EntityTypeMapping TypeName="yazilimbakimiModel.tbl_Iletisim">
               <MappingFragment StoreEntitySet="tbl_Iletisim">
-                <ScalarProperty Name="iletisimId" ColumnName="iletisimId" />
-                <ScalarProperty Name="musteriId" ColumnName="musteriId" />
-                <ScalarProperty Name="mail" ColumnName="mail" />
-                <ScalarProperty Name="cepTelefonu" ColumnName="cepTelefonu" />
-                <ScalarProperty Name="evTelefonu" ColumnName="evTelefonu" />
                 <ScalarProperty Name="musteriAdresi" ColumnName="musteriAdresi" />
+                <ScalarProperty Name="evTelefonu" ColumnName="evTelefonu" />
+                <ScalarProperty Name="cepTelefonu" ColumnName="cepTelefonu" />
+                <ScalarProperty Name="mail" ColumnName="mail" />
+                <ScalarProperty Name="musteriId" ColumnName="musteriId" />
+                <ScalarProperty Name="iletisimId" ColumnName="iletisimId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tbl_Musteriler">
             <EntityTypeMapping TypeName="yazilimbakimiModel.tbl_Musteriler">
               <MappingFragment StoreEntitySet="tbl_Musteriler">
-                <ScalarProperty Name="musteriNo" ColumnName="musteriNo" />
-                <ScalarProperty Name="TCKN" ColumnName="TCKN" />
-                <ScalarProperty Name="sifre" ColumnName="sifre" />
-                <ScalarProperty Name="isim" ColumnName="isim" />
-                <ScalarProperty Name="soyisim" ColumnName="soyisim" />
-                <ScalarProperty Name="cinsiyet" ColumnName="cinsiyet" />
-                <ScalarProperty Name="dogumTarihi" ColumnName="dogumTarihi" />
-                <ScalarProperty Name="kizlikSoyadi" ColumnName="kizlikSoyadi" />
-                <ScalarProperty Name="musteriTipi" ColumnName="musteriTipi" />
                 <ScalarProperty Name="musteriPuani" ColumnName="musteriPuani" />
+                <ScalarProperty Name="musteriTipi" ColumnName="musteriTipi" />
+                <ScalarProperty Name="kizlikSoyadi" ColumnName="kizlikSoyadi" />
+                <ScalarProperty Name="dogumTarihi" ColumnName="dogumTarihi" />
+                <ScalarProperty Name="cinsiyet" ColumnName="cinsiyet" />
+                <ScalarProperty Name="soyisim" ColumnName="soyisim" />
+                <ScalarProperty Name="isim" ColumnName="isim" />
+                <ScalarProperty Name="sifre" ColumnName="sifre" />
+                <ScalarProperty Name="TCKN" ColumnName="TCKN" />
+                <ScalarProperty Name="musteriNo" ColumnName="musteriNo" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

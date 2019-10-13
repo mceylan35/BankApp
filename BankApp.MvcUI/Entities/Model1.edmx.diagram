@@ -5,12 +5,12 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="1241219551b04254bf7ed2892a16f797" Name="Diagram1">
-        <EntityTypeShape EntityType="yazilimbakimiModel.tbl_Hesaplar" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="yazilimbakimiModel.tbl_HGS" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="yazilimbakimiModel.tbl_Iletisim" Width="1.5" PointX="3" PointY="5.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="yazilimbakimiModel.tbl_Musteriler" Width="1.5" PointX="0.75" PointY="2.875" IsExpanded="true" />
-        <AssociationConnector Association="yazilimbakimiModel.FK_tbl_Hesaplar_tbl_Musteriler1" ManuallyRouted="false" />
-        <AssociationConnector Association="yazilimbakimiModel.FK_tbl_Iletisim_tbl_Musteriler" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="yazilimbakimiModel.tbl_Hesaplar" Width="1.5" PointX="3" PointY="1.125" />
+        <EntityTypeShape EntityType="yazilimbakimiModel.tbl_HGS" Width="1.5" PointX="5.75" PointY="0.75" />
+        <EntityTypeShape EntityType="yazilimbakimiModel.tbl_Iletisim" Width="1.5" PointX="3" PointY="4.875" />
+        <EntityTypeShape EntityType="yazilimbakimiModel.tbl_Musteriler" Width="1.5" PointX="0.75" PointY="2.5" />
+        <AssociationConnector Association="yazilimbakimiModel.FK_tbl_Hesaplar_tbl_Musteriler1" />
+        <AssociationConnector Association="yazilimbakimiModel.FK_tbl_Iletisim_tbl_Musteriler" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

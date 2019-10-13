@@ -15,18 +15,14 @@ namespace BankApp.MvcUI.Entities
     public partial class tbl_Hesaplar
     {
         public int hesapId { get; set; }
-        public string IBAN { get; set; }
-        public Nullable<int> musteriNo { get; set; }
+        public string musteriNo { get; set; }
         public string hesapNumarasi { get; set; }
         public Nullable<bool> aktiflik { get; set; }
-        public Nullable<bool> hesapTipi { get; set; }
         public Nullable<decimal> bakiye { get; set; }
-        public string paraTipi { get; set; }
         public Nullable<int> krediLimiti { get; set; }
         public Nullable<System.DateTime> hesapAcilisTarihi { get; set; }
         public Nullable<System.DateTime> hesapKapanisTarihi { get; set; }
-        public Nullable<int> hesapPuani { get; set; }
-        public Nullable<short> ekNo { get; set; }
+        public Nullable<int> ekNo { get; set; }
     
         public virtual tbl_Musteriler tbl_Musteriler { get; set; }
     }
