@@ -143,32 +143,32 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KullaniciController.cs" />
-    <Compile Include="Entities\Bankmodel.Context.cs">
+    <Compile Include="Entities\Model1.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Bankmodel.Context.tt</DependentUpon>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Entities\Bankmodel.cs">
+    <Compile Include="Entities\Model1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Bankmodel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Entities\Bankmodel.Designer.cs">
+    <Compile Include="Entities\Model1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Bankmodel.edmx</DependentUpon>
+      <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
     <Compile Include="Entities\tbl_Hesaplar.cs">
-      <DependentUpon>Bankmodel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\tbl_HGS.cs">
-      <DependentUpon>Bankmodel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\tbl_Iletisim.cs">
-      <DependentUpon>Bankmodel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\tbl_Musteriler.cs">
-      <DependentUpon>Bankmodel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -338,15 +338,15 @@
     <Content Include="Content\js\wizard\wizard-active.js" />
     <Content Include="Content\js\wow.min.js" />
     <Content Include="Content\style.css" />
-    <Content Include="Entities\Bankmodel.Context.tt">
+    <Content Include="Entities\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Bankmodel.edmx</DependentUpon>
-      <LastGenOutput>Bankmodel.Context.cs</LastGenOutput>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Entities\Bankmodel.tt">
+    <Content Include="Entities\Model1.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Bankmodel.edmx</DependentUpon>
-      <LastGenOutput>Bankmodel.cs</LastGenOutput>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -366,12 +366,12 @@
     <Content Include="Content\fonts\notika-icon.eot" />
     <Content Include="Content\fonts\notika-icon.ttf" />
     <Content Include="Content\fonts\notika-icon.woff" />
-    <EntityDeploy Include="Entities\Bankmodel.edmx">
+    <EntityDeploy Include="Entities\Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Bankmodel.Designer.cs</LastGenOutput>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Entities\Bankmodel.edmx.diagram">
-      <DependentUpon>Bankmodel.edmx</DependentUpon>
+    <Content Include="Entities\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />

@@ -14,7 +14,7 @@ namespace BankApp.MvcUI.Controllers
 {
     public class KullaniciController : Controller
     {
-        private YazilimBakimiEntities db = new YazilimBakimiEntities();
+        private yazilimbakimiEntities db = new yazilimbakimiEntities();
 
         [HttpGet]
         public ActionResult Login()

@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="YazilimBakimiModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="yazilimbakimiModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="tbl_Hesaplar">
           <Key>
             <PropertyRef Name="hesapId" />
@@ -80,7 +80,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="YazilimBakimiModelStoreContainer">
+        <EntityContainer Name="yazilimbakimiModelStoreContainer">
           <EntitySet Name="tbl_Hesaplar" EntityType="Self.tbl_Hesaplar" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbl_HGS" EntityType="Self.tbl_HGS" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbl_Iletisim" EntityType="Self.tbl_Iletisim" Schema="dbo" store:Type="Tables" />
@@ -98,7 +98,7 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="YazilimBakimiModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="yazilimbakimiModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="tbl_Hesaplar">
           <Key>
             <PropertyRef Name="hesapId" />
@@ -178,7 +178,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="YazilimBakimiEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="yazilimbakimiEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="tbl_Hesaplar" EntityType="Self.tbl_Hesaplar" />
           <EntitySet Name="tbl_HGS" EntityType="Self.tbl_HGS" />
           <EntitySet Name="tbl_Iletisim" EntityType="Self.tbl_Iletisim" />
@@ -197,9 +197,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="YazilimBakimiModelStoreContainer" CdmEntityContainer="YazilimBakimiEntities">
+        <EntityContainerMapping StorageEntityContainer="yazilimbakimiModelStoreContainer" CdmEntityContainer="yazilimbakimiEntities">
           <EntitySetMapping Name="tbl_Hesaplar">
-            <EntityTypeMapping TypeName="YazilimBakimiModel.tbl_Hesaplar">
+            <EntityTypeMapping TypeName="yazilimbakimiModel.tbl_Hesaplar">
               <MappingFragment StoreEntitySet="tbl_Hesaplar">
                 <ScalarProperty Name="hesapId" ColumnName="hesapId" />
                 <ScalarProperty Name="IBAN" ColumnName="IBAN" />
@@ -218,7 +218,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tbl_HGS">
-            <EntityTypeMapping TypeName="YazilimBakimiModel.tbl_HGS">
+            <EntityTypeMapping TypeName="yazilimbakimiModel.tbl_HGS">
               <MappingFragment StoreEntitySet="tbl_HGS">
                 <ScalarProperty Name="hgsNo" ColumnName="hgsNo" />
                 <ScalarProperty Name="bakiye" ColumnName="bakiye" />
@@ -226,7 +226,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tbl_Iletisim">
-            <EntityTypeMapping TypeName="YazilimBakimiModel.tbl_Iletisim">
+            <EntityTypeMapping TypeName="yazilimbakimiModel.tbl_Iletisim">
               <MappingFragment StoreEntitySet="tbl_Iletisim">
                 <ScalarProperty Name="iletisimId" ColumnName="iletisimId" />
                 <ScalarProperty Name="musteriId" ColumnName="musteriId" />
@@ -238,7 +238,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tbl_Musteriler">
-            <EntityTypeMapping TypeName="YazilimBakimiModel.tbl_Musteriler">
+            <EntityTypeMapping TypeName="yazilimbakimiModel.tbl_Musteriler">
               <MappingFragment StoreEntitySet="tbl_Musteriler">
                 <ScalarProperty Name="musteriNo" ColumnName="musteriNo" />
                 <ScalarProperty Name="TCKN" ColumnName="TCKN" />
