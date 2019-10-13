@@ -21,7 +21,7 @@ namespace BankApp.MvcUI.Entities
             this.tbl_Iletisim = new HashSet<tbl_Iletisim>();
         }
     
-        public int musteriNo { get; set; }
+        public string musteriNo { get; set; }
         public string TCKN { get; set; }
         public string sifre { get; set; }
         public string isim { get; set; }

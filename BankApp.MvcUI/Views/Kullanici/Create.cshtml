@@ -1,4 +1,14 @@
 ﻿@model BankApp.MvcUI.Entities.tbl_Musteriler
+
+
+@{
+    ViewBag.Title = "Create";
+    if (User.Identity.Name != null)
+    {
+
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+}
 <div class="login-content">
     <!-- Login -->
 
@@ -9,7 +19,7 @@
             {
                 <div class="alert alert-danger" role="alert">@ViewBag.Hata</div>
             }
-           
+
 
             <form method="post" action="/Kullanici/Create">
                 <div class="input-group">
@@ -30,7 +40,7 @@
                 <div class="input-group mg-t-15">
                     <span class="input-group-addon nk-ic-st-pro"><i class="notika-icon notika-support"></i></span>
                     <div class="nk-int-st">
-                        <input type="text" class="form-control isim" id="isim"placeholder="Soy isim" name="soyisim" required>
+                        <input type="text" class="form-control isim" id="isim" placeholder="Soy isim" name="soyisim" required>
                         @Html.ValidationMessageFor(model => model.soyisim, "", new { @class = "text-danger" })
                     </div>
                 </div>
@@ -90,15 +100,15 @@
                         <input type="text" class="form-control" placeholder="Müşteri Adres" name="musteriAdresi" required>
                     </div>
                 </div>
-              
+
                 <button type="submit" href="Login" data-ma-action="nk-login-switch" data-ma-block="#l-register" class="btn btn-login btn-success btn-float"><i class="notika-icon notika-right-arrow right-arrow-ant"></i></button>
 
             </form>
         </div>
 
-            <div class="nk-navigation rg-ic-stl">
-                <a href="/Kullanici/Login" data-ma-action="nk-login-switch" data-ma-block="#l-login"><i class="notika-icon notika-right-arrow"></i> <span>Sign in</span></a>
-                
-            </div>
+        <div class="nk-navigation rg-ic-stl">
+            <a href="/Kullanici/Login" data-ma-action="nk-login-switch" data-ma-block="#l-login"><i class="notika-icon notika-right-arrow"></i> <span>Sign in</span></a>
+
         </div>
+    </div>
 </div>

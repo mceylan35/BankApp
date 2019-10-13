@@ -15,7 +15,7 @@ namespace BankApp.MvcUI.Entities
     public partial class tbl_Iletisim
     {
         public int iletisimId { get; set; }
-        public Nullable<int> musteriId { get; set; }
+        public string musteriId { get; set; }
         public string mail { get; set; }
         public string cepTelefonu { get; set; }
         public string evTelefonu { get; set; }
