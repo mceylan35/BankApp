@@ -144,6 +144,8 @@
     <Compile Include="Controllers\hesapController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KullaniciController.cs" />
+    <Compile Include="Controllers\TransferController.cs" />
+    <Compile Include="Controllers\VirmanController.cs" />
     <Compile Include="Entities\Model1.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -412,6 +414,13 @@
     <Content Include="Views\hesap\Edit.cshtml" />
     <Content Include="Views\hesap\Index.cshtml" />
     <Content Include="Views\Kullanici\Credate.cshtml" />
+    <Content Include="Views\Shared\_IslemLayout.cshtml" />
+    <Content Include="Views\Virman\Create.cshtml" />
+    <Content Include="Views\Virman\Delete.cshtml" />
+    <Content Include="Views\Virman\Details.cshtml" />
+    <Content Include="Views\Virman\Edit.cshtml" />
+    <Content Include="Views\Virman\Index.cshtml" />
+    <Content Include="Views\Transfer\Virman.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

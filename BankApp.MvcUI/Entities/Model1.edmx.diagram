@@ -4,13 +4,13 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="1241219551b04254bf7ed2892a16f797" Name="Diagram1">
-        <EntityTypeShape EntityType="yazilimbakimiModel.tbl_Hesaplar" Width="1.5" PointX="3" PointY="1.125" />
-        <EntityTypeShape EntityType="yazilimbakimiModel.tbl_HGS" Width="1.5" PointX="5.75" PointY="0.75" />
-        <EntityTypeShape EntityType="yazilimbakimiModel.tbl_Iletisim" Width="1.5" PointX="3" PointY="4.875" />
-        <EntityTypeShape EntityType="yazilimbakimiModel.tbl_Musteriler" Width="1.5" PointX="0.75" PointY="2.5" />
-        <AssociationConnector Association="yazilimbakimiModel.FK_tbl_Hesaplar_tbl_Musteriler1" />
-        <AssociationConnector Association="yazilimbakimiModel.FK_tbl_Iletisim_tbl_Musteriler" />
+      <Diagram DiagramId="f24b9b6721d74c8383ca62862718c5a8" Name="Diagram1">
+        <EntityTypeShape EntityType="YazilimBakimiModel.tbl_Hesaplar" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="YazilimBakimiModel.tbl_HGS" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="YazilimBakimiModel.tbl_Iletisim" Width="1.5" PointX="3" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="YazilimBakimiModel.tbl_Musteriler" Width="1.5" PointX="0.75" PointY="2.5" IsExpanded="true" />
+        <AssociationConnector Association="YazilimBakimiModel.FK_tbl_Hesaplar_tbl_Musteriler1" ManuallyRouted="false" />
+        <AssociationConnector Association="YazilimBakimiModel.FK_tbl_Iletisim_tbl_Musteriler" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
