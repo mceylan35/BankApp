@@ -13,10 +13,10 @@ namespace BankApp.MvcUI.Entities
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class yazilimbakimiEntities : DbContext
+    public partial class YazilimBakimiEntities : DbContext
     {
-        public yazilimbakimiEntities()
-            : base("name=yazilimbakimiEntities")
+        public YazilimBakimiEntities()
+            : base("name=YazilimBakimiEntities")
         {
         }
     

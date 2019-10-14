@@ -14,7 +14,7 @@ namespace BankApp.MvcUI.Controllers
 {
     public class KullaniciController : Controller
     {
-        private yazilimbakimiEntities db = new yazilimbakimiEntities();
+        private YazilimBakimiEntities db = new YazilimBakimiEntities();
 
         [HttpGet]
         public ActionResult Login()
@@ -68,8 +68,8 @@ namespace BankApp.MvcUI.Controllers
         [HttpPost]
         public ActionResult Create(tbl_Musteriler register,tbl_Iletisim register2)
         {
-            var musteri = db.tbl_Musteriler.Where(i => i.TCKN == register.TCKN);
-            var ilet = db.tbl_Iletisim.Where(i => i.mail == register2.mail);
+            var musteri = db.tbl_Musteriler.Where(i => i.TCKN == register.TCKN).FirstOrDefault();
+            var ilet = db.tbl_Iletisim.Where(i => i.mail == register2.mail).FirstOrDefault();
             if (ModelState.IsValid && musteri==null && ilet==null)
             {
                 Random r = new Random();
