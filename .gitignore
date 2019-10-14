@@ -259,3 +259,5 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
+.vs/BankApp/v15/Server/sqlite3/storage.ide-shm
+.vs/BankApp/v15/Server/sqlite3/storage.ide-wal
