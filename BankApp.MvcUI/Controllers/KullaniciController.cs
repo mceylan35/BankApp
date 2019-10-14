@@ -14,7 +14,7 @@ namespace BankApp.MvcUI.Controllers
 {
     public class KullaniciController : Controller
     {
-        private YazilimBakimiEntities db = new YazilimBakimiEntities();
+        private yazilimbakimiEntities db = new yazilimbakimiEntities();
 
         [HttpGet]
         public ActionResult Login()
@@ -29,7 +29,7 @@ namespace BankApp.MvcUI.Controllers
             if (kullanici != null)
             {
                 FormsAuthentication.SetAuthCookie(kullanici.musteriNo.ToString(), false);
-                return RedirectToAction("Index","Home");
+                return RedirectToAction("Index","hesap");
             }
             else
                 return View();
@@ -62,19 +62,24 @@ namespace BankApp.MvcUI.Controllers
             return View();
         }
 
+        public ActionResult Credate()
+        {
+            return View();
+        }
+
         // POST: Kullanici/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         public ActionResult Create(tbl_Musteriler register,tbl_Iletisim register2)
         {
-            var musteri = db.tbl_Musteriler.Where(i => i.TCKN == register.TCKN).FirstOrDefault();
-            var ilet = db.tbl_Iletisim.Where(i => i.mail == register2.mail).FirstOrDefault();
+            var musteri = db.tbl_Musteriler.FirstOrDefault(i => i.TCKN == register.TCKN);
+            var ilet = db.tbl_Iletisim.FirstOrDefault(i => i.mail == register2.mail);
             if (ModelState.IsValid && musteri==null && ilet==null)
             {
                 Random r = new Random();
                 int musteriNo = r.Next(111111, 999999);
-                register.musteriNo = musteriNo;
+                register.musteriNo = musteriNo.ToString();
                 db.tbl_Musteriler.Add(register);
                 db.tbl_Iletisim.Add(register2);
                 db.SaveChanges();

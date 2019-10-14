@@ -1,0 +1,121 @@
+﻿@model BankApp.MvcUI.Entities.tbl_Hesaplar
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>tbl_Hesaplar</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.IBAN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IBAN)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.hesapNumarasi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.hesapNumarasi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.aktiflik)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.aktiflik)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.hesapTipi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.hesapTipi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.bakiye)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.bakiye)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.paraTipi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.paraTipi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.krediLimiti)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.krediLimiti)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.hesapAcilisTarihi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.hesapAcilisTarihi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.hesapKapanisTarihi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.hesapKapanisTarihi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.hesapPuani)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.hesapPuani)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ekNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ekNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tbl_Musteriler.TCKN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbl_Musteriler.TCKN)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

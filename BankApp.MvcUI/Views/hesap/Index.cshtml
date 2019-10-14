@@ -1,0 +1,60 @@
+﻿@model IEnumerable<BankApp.MvcUI.Entities.tbl_Hesaplar>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script src="http://code.jquery.com/jquery-1.11.0.js"
+        integrity="sha256-zgND4db0iXaO7v4CLBIYHGoIIudWI5hRMQrPB20j0Qw="
+        crossorigin="anonymous"></script>
+
+<div class="normal-table-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="normal-table-list">
+                    <div class="basic-tb-hd">
+                        <h1>Hesaplarım</h1>
+                        <h3><button class="yeniHesap btn-success" id="@User.Identity.Name">Yeni Hesap Oluştur</b></h3>
+                    </div>
+                    <div class="bsc-tbl">
+                        <table class="table table-sc-ex" id="datatable">
+                            <thead>
+                                <tr>
+                                    <th>Hesap Numarası</th>
+                                    <th>Bakiye</th>
+                                    <th>Hesap Açılış Tarihi</th>
+                                    <th>Hesap Silme</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                            @if (Model.Count() == 0)
+                             {  
+                                <tr></tr>
+                                <td></td>
+                                <h2>Henüz Hesap numaranız yok!</h2>
+                             }
+                            else
+                            {
+
+                                foreach (var m in Model)
+                                {
+                                    <tr>
+                                        <td>@m.hesapNumarasi</td>
+                                        <td>@m.bakiye</td>
+                                        <td>@m.hesapAcilisTarihi</td>
+                                        <td><button id="@m.ekNo" class="hesapsil btn-danger">Hesap Sil</button></td>
+                                    </tr>
+                                }
+                            }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

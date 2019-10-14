@@ -141,6 +141,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\hesapController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KullaniciController.cs" />
     <Compile Include="Entities\Model1.Context.cs">
@@ -405,6 +406,12 @@
     <Content Include="Views\Kullanici\Edit.cshtml" />
     <Content Include="Views\Kullanici\Index.cshtml" />
     <Content Include="Views\Kullanici\Login.cshtml" />
+    <Content Include="Views\hesap\Create.cshtml" />
+    <Content Include="Views\hesap\Delete.cshtml" />
+    <Content Include="Views\hesap\Details.cshtml" />
+    <Content Include="Views\hesap\Edit.cshtml" />
+    <Content Include="Views\hesap\Index.cshtml" />
+    <Content Include="Views\Kullanici\Credate.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
