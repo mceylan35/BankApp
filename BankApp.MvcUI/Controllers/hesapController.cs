@@ -12,11 +12,12 @@ using System.Web.Http.Results;
 using System.Web.Mvc;
 using BankApp.MvcUI.Entities;
 
+
 namespace BankApp.MvcUI.Controllers
 {
     public class hesapController : Controller
     {
-        private yazilimbakimiEntities db = new yazilimbakimiEntities();
+        private YazilimBakimiEntities db = new YazilimBakimiEntities();
 
         // GET: hesap
         public ActionResult Index()

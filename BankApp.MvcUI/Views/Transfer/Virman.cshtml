@@ -1,0 +1,57 @@
+﻿@model BankApp.MvcUI.Entities.tbl_Hesaplar
+@{
+    ViewBag.Title = "Virman";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="container">
+    <h2>Virman</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Gönderen Hesap</th>
+                <th scope="col">Alıcı Hesap</th>
+                <th scope="col">Miktar</th>
+                <th scope="col">#</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.hesapId, "hesaplar", htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.DropDownList("gonderenhesaplar", null, htmlAttributes: new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.hesapId, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </th>
+                <td>
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.hesapId, "hesaplar", htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.DropDownList("alicihesaplar", null, htmlAttributes: new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.hesapId, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.bakiye, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.bakiye, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.bakiye, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </td>
+                <td><input type="submit" class="btn btn-warning" value="Gönder" /></td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>
+
+
