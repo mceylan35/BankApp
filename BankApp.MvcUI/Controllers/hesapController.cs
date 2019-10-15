@@ -19,6 +19,46 @@ namespace BankApp.MvcUI.Controllers
     {
         private YazilimBakimiEntities db = new YazilimBakimiEntities();
 
+        public ActionResult ParaCek()
+        {
+            var Hesaplar = db.tbl_Hesaplar.Where(t => t.musteriNo == User.Identity.Name && t.aktiflik == true).ToList();
+            ViewBag.cekilecekHesap = new SelectList(Hesaplar, "hesapId", "hesapNumarasi");
+            return View();
+        }
+        [System.Web.Mvc.HttpPost]
+        public ActionResult ParaCek(ParaViewModel para)
+        {
+            var Hesaplar = db.tbl_Hesaplar.Where(t => t.musteriNo == User.Identity.Name && t.aktiflik == true).ToList();
+            ViewBag.cekilecekHesap = new SelectList(Hesaplar, "hesapId", "hesapNumarasi");
+
+            var hesap = db.tbl_Hesaplar.FirstOrDefault(i => i.hesapId == para.hesapNo && i.musteriNo == User.Identity.Name);
+            if (hesap.bakiye < para.bakiye)
+            {
+                return HttpNotFound("Bakiye Yetersiz!!!");
+            }
+            hesap.bakiye = hesap.bakiye - para.bakiye;
+            db.SaveChanges();
+            return View();
+        }
+
+        public ActionResult ParaYukle()
+        {
+            var Hesaplar = db.tbl_Hesaplar.Where(t => t.musteriNo == User.Identity.Name && t.aktiflik == true).ToList();
+            ViewBag.yuklenicekHesap = new SelectList(Hesaplar, "hesapId", "hesapNumarasi");
+            return View();
+        }
+        [System.Web.Mvc.HttpPost]
+        public ActionResult ParaYukle(ParaViewModel para)
+        {
+            var Hesaplar = db.tbl_Hesaplar.Where(t => t.musteriNo == User.Identity.Name && t.aktiflik == true).ToList();
+            ViewBag.yuklenicekHesap = new SelectList(Hesaplar, "hesapId", "hesapNumarasi");
+
+            var hesap = db.tbl_Hesaplar.FirstOrDefault(i => i.hesapId == para.hesapNo && i.musteriNo == User.Identity.Name);
+            hesap.bakiye = hesap.bakiye + para.bakiye;
+            db.SaveChanges();
+            return View();
+        }
+
         // GET: hesap
         public ActionResult Index()
         {   
@@ -104,9 +144,15 @@ namespace BankApp.MvcUI.Controllers
             tbl_Hesaplar hesap =db.tbl_Hesaplar.FirstOrDefault(t => t.musteriNo == User.Identity.Name && t.ekNo ==ekNo);
             hesap.aktiflik = false;
             hesap.hesapKapanisTarihi = DateTime.Now;
-            db.tbl_Hesaplar.AddOrUpdate(hesap);
-            db.SaveChanges();
-            return Json("silindi", JsonRequestBehavior.AllowGet);
+            if(hesap.bakiye==0)
+            {
+                db.tbl_Hesaplar.AddOrUpdate(hesap);
+                db.SaveChanges();
+               return Json("silindi", JsonRequestBehavior.AllowGet);
+            }
+            return Json("Silinmedi", JsonRequestBehavior.AllowGet);
+
+
         }
 
         // POST: hesap/Delete/5

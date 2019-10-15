@@ -1,17 +1,15 @@
 ﻿@model BankApp.MvcUI.Entities.tbl_Hesaplar
 @{
-    ViewBag.Title = "Virman";
+    ViewBag.Title = "ParaCek";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-
 <div class="container">
-    <h2>Virman</h2>
     <table class="table">
         <thead>
             <tr>
-                <th scope="col">Gönderen Hesap</th>
-                <th scope="col">Alıcı Hesap</th>
+                <th scope="col">Çekilecek Hesap</th>
+
                 <th scope="col">Miktar</th>
                 <th scope="col">#</th>
             </tr>
@@ -19,13 +17,13 @@
         <tbody>
             <tr>
                 <th scope="row">
-                   
+
                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                     <div class="form-group">
                         @Html.LabelFor(model => model.hesapId, "", htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-5">
 
-                            @Html.DropDownList("Gonderen", ViewBag.gonderen as SelectList, "---Hesap Seçiniz---")
+                            @Html.DropDownList("cekilecekHesap", ViewBag.cekilecekHesap as SelectList, "---Hesap Seçiniz---")
 
 
                             @*@Html.DropDownList("gonderen", null, htmlAttributes: new { @class = "form-control" })*@
@@ -35,16 +33,6 @@
                     </div>
                 </th>
                 <td>
-                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.hesapId, "", htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-md-5">
-                            @Html.DropDownList("Alici", Enumerable.Empty<SelectListItem>(), "---Hesap Seçiniz---")
-                            @Html.ValidationMessageFor(model => model.hesapId, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-                </td>
-                <td>
                     <div class="form-group">
                         @Html.LabelFor(model => model.bakiye, htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-10">
@@ -53,11 +41,10 @@
                         </div>
                     </div>
                 </td>
-                <td><input type="submit" class="btn btn-warning" id="virmangonder" value="Gönder" /></td>
+                <td><input type="submit" class="btn btn-warning" id="paraCekme" value="Cek" /></td>
             </tr>
 
         </tbody>
     </table>
 </div>
-
 

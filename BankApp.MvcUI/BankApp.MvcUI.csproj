@@ -144,6 +144,7 @@
     <Compile Include="Controllers\hesapController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KullaniciController.cs" />
+    <Compile Include="Controllers\ParaViewModel.cs" />
     <Compile Include="Controllers\TransferController.cs" />
     <Compile Include="Entities\Model1.Context.cs">
       <AutoGen>True</AutoGen>
@@ -417,6 +418,8 @@
     <Content Include="Views\Kullanici\Credate.cshtml" />
     <Content Include="Views\Shared\_IslemLayout.cshtml" />
     <Content Include="Views\Transfer\Virman.cshtml" />
+    <Content Include="Views\hesap\ParaYukle.cshtml" />
+    <Content Include="Views\hesap\ParaCek.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
