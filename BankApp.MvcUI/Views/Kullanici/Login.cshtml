@@ -1,68 +1,10 @@
 ﻿
 @{
     ViewBag.Title = "Login";
-    Layout = null;
+    Layout = "~/Views/Shared/_IslemLayout.cshtml";
 }
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Sümer Bank</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- favicon
-        ============================================ -->
-    <link rel="shortcut icon" type="image/x-icon" href="~/Content/img/favicon.ico">
-    <!-- Google Fonts
-        ============================================ -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900" rel="stylesheet">
-    <!-- Bootstrap CSS
-        ============================================ -->
-    <link rel="stylesheet" href="~/Content/css/bootstrap.min.css">
-    <!-- Bootstrap CSS
-        ============================================ -->
-    <link rel="stylesheet" href="~/Content/css/font-awesome.min.css">
-    <!-- owl.carousel CSS
-        ============================================ -->
-    <link rel="stylesheet" href="~/Content/css/owl.carousel.css">
-    <link rel="stylesheet" href="~/Content/css/owl.theme.css">
-    <link rel="stylesheet" href="~/Content/css/owl.transitions.css">
-    <!-- meanmenu CSS
-        ============================================ -->
-    <link rel="stylesheet" href="~/Content/css/meanmenu/meanmenu.min.css">
-    <!-- animate CSS
-        ============================================ -->
-    <link rel="stylesheet" href="~/Content/css/animate.css">
-    <!-- normalize CSS
-        ============================================ -->
-    <link rel="stylesheet" href="~/Content/css/normalize.css">
-    <!-- mCustomScrollbar CSS
-        ============================================ -->
-    <link rel="stylesheet" href="~/Content/css/scrollbar/jquery.mCustomScrollbar.min.css">
-    <!-- jvectormap CSS
-        ============================================ -->
-    <link rel="stylesheet" href="~/Content/css/jvectormap/jquery-jvectormap-2.0.3.css">
-    <!-- notika icon CSS
-        ============================================ -->
-    <link rel="stylesheet" href="~/Content/css/notika-custom-icon.css">
-    <!-- wave CSS
-        ============================================ -->
-    <link rel="stylesheet" href="~/Content/css/wave/waves.min.css">
-    <!-- main CSS
-        ============================================ -->
-    <link rel="stylesheet" href="~/Content/css/main.css">
-    <!-- style CSS
-        ============================================ -->
 
-    <link href="~/Content/style.css" rel="stylesheet" />
-
-    <!-- responsive CSS
-        ============================================ -->
-    <link rel="stylesheet" href="~/Content/css/responsive.css">
-    <!-- modernizr JS
-        ============================================ -->
-    <script src="~/Content/js/vendor/modernizr-2.8.3.min.js"></script>
-</head>
 <!--[if lt IE 8]>
         <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -83,7 +25,7 @@
                 <div class="input-group mg-t-15">
                     <span class="input-group-addon nk-ic-st-pro"><i class="notika-icon notika-edit"></i></span>
                     <div class="nk-int-st">
-                        <input type="password" min="4" max="8" maxlength="8" class="form-control" placeholder="Şifre" name="sifre">
+                        <input type="password" minlength="4" maxlength="8" class="form-control" placeholder="Şifre" name="sifre" required>
                     </div>
                 </div>
                 
@@ -144,8 +86,5 @@
         </div>
     </div>
 </div>
-<script>$("sayi").keyup(function (){
-    if (this.value.match(/[^0-9]/g)){
-        this.value = this.value.replace(/[^0-9]/g,''); }});</script>
 
-<script>
+

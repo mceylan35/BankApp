@@ -3,11 +3,14 @@
 
 @{
     ViewBag.Title = "Create";
-    if (User.Identity.Name != null)
-    {
 
-        Layout = "~/Views/Shared/_Layout.cshtml";
-    }
+    Layout = "~/Views/Shared/_IslemLayout.cshtml";
+
+
+    string tarih= DateTime.Now.AddYears(-18).ToString("yyyy-MM-dd");
+
+
+
 }
 <div class="login-content">
     <!-- Login -->
@@ -47,7 +50,7 @@
                 <div class="input-group mg-t-15">
                     <span class="input-group-addon nk-ic-st-pro"><i class="notika-icon notika-plus-symbol"></i></span>
                     <div class="nk-int-st">
-                        <input type="password" min="4" max="8" maxlength="8" class="form-control" placeholder="Şifre" name="sifre" required>
+                        <input type="password" minlength="4" maxlength="8" class="form-control" placeholder="Şifre" name="sifre" required>
                         @Html.ValidationMessageFor(model => model.sifre, "", new { @class = "text-danger" })
                     </div>
                 </div>
@@ -63,7 +66,7 @@
                 <div class="input-group mg-t-15">
                     <span class="input-group-addon nk-ic-st-pro"><i class="notika-icon notika-calendar"></i></span>
                     <div class="nk-int-st">
-                        <input type="date" class="form-control" name="dogumTarihi" required>
+                        <input type="date" class="form-control" name="dogumTarihi" min="1900-01-01" max="@tarih" required>
                         @Html.ValidationMessageFor(model => model.dogumTarihi, "", new { @class = "text-danger" })
                     </div>
                 </div>
@@ -84,14 +87,14 @@
                 <div class="input-group mg-t-15">
                     <span class="input-group-addon nk-ic-st-pro"><i class="notika-icon notika-phone"></i></span>
                     <div class="nk-int-st">
-                        <input type="tel" min="8" maxlength="13" class="form-control sayi" placeholder="Cep Telefonu" name="cepTelefonu" required>
+                        <input type="text" minlength="8" maxlength="13" class="form-control sayi" placeholder="Cep Telefonu" name="cepTelefonu" required>
 
                     </div>
                 </div>
                 <div class="input-group mg-t-15">
                     <span class="input-group-addon nk-ic-st-pro"><i class="notika-icon notika-phone"></i></span>
                     <div class="nk-int-st">
-                        <input type="tel" class="form-control sayi" placeholder="Ev Telefonu" name="evTelefonu" required>
+                        <input type="text" minlength="8" maxlength="13" class="form-control sayi" placeholder="Ev Telefonu" name="evTelefonu" required>
                     </div>
                 </div>
                 <div class="input-group mg-t-15">
