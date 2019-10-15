@@ -203,7 +203,7 @@
                             <a data-toggle="tab" href="#Charts"><i class="notika-icon notika-bar-chart"></i> Kredi İşlemleri</a>
                         </li>
                         <li>
-                            <a data-toggle="tab" href="#Tables"><i class="notika-icon notika-windows"></i> Virman İşlemleri</a>
+                            <a href="/Transfer/Virman"><i class="notika-icon notika-windows"></i> Virman İşlemleri</a>
                         </li>
                         <li>
                             <a data-toggle="tab" href="#Forms"><i class="notika-icon notika-form"></i> Havale İşlemleri</a>
@@ -461,4 +461,78 @@
                 }
             });
     });
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        //Gonderen Hesap seçildiğinde bu fonksiyonumuz çalışmaya başlayacaktır.
+        $('#Gonderen').change(function () {
+          
+         
+            var HesapNo = $(this).val();
+         
+            if (HesapNo != null && HesapNo != '') {
+                $.ajax({
+                    type: "post",
+                    url: '@Url.Action("AltHesaplariGetir", "Transfer")',
+                    data: { HesapNo: HesapNo },
+                    success: function (althesaplar) {
+
+                     
+          
+
+                        $.each(althesaplar, function (index, hesap) {
+                            $('#Alici').append($('<option/>', {
+                                value: hesap.hesapId,
+                                text: hesap.hesapNumarasi
+                            }));
+                        });
+                     
+                     
+                    },
+                    error: function () {
+                
+                        alert("Sanırım Bir Hata Oluştu!");
+                    },
+                    beforeSend: function () {
+                        $("#Alici").html("");
+                      
+                    },
+                    complete: function () {
+                    
+                    
+                      
+                    }
+                });
+            }
+        });
+    });
+</script>
+
+<script>
+    $("#virmangonder").click(function () {
+        var gonderen = $("#Gonderen").val();
+        var alici = $("#Alici").val();
+        var bakiye = $("#bakiye").val();
+      
+        $.ajax(
+            {
+                type: "POST",
+                url: '@Url.Action("Virman", "Transfer")',
+                data: "Gonderen=" + $("#Gonderen").val() + "&Alici=" + $("#Alici").val() +
+
+                    "&Bakiye=" + $("#bakiye").val(),
+                success: function (gelenveri) {
+              
+                    alert("başarılı");
+                    location.reload();
+                },
+                error: function () {
+                
+                    alert("Hata oluştu");
+                }
+            });
+    });
+
+
 </script>

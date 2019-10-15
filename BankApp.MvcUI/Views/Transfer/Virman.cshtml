@@ -21,9 +21,14 @@
                 <th scope="row">
                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                     <div class="form-group">
-                        @Html.LabelFor(model => model.hesapId, "hesaplar", htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-md-10">
-                            @Html.DropDownList("gonderenhesaplar", null, htmlAttributes: new { @class = "form-control" })
+                        @Html.LabelFor(model => model.hesapId, "", htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-5">
+
+                            @Html.DropDownList("Gonderen", ViewBag.gonderen as SelectList, "---Hesap Seçiniz---")
+                           
+
+                            @*@Html.DropDownList("gonderen", null, htmlAttributes: new { @class = "form-control" })*@
+
                             @Html.ValidationMessageFor(model => model.hesapId, "", new { @class = "text-danger" })
                         </div>
                     </div>
@@ -31,9 +36,9 @@
                 <td>
                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                     <div class="form-group">
-                        @Html.LabelFor(model => model.hesapId, "hesaplar", htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-md-10">
-                            @Html.DropDownList("alicihesaplar", null, htmlAttributes: new { @class = "form-control" })
+                        @Html.LabelFor(model => model.hesapId, "", htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-5">
+                            @Html.DropDownList("Alici", Enumerable.Empty<SelectListItem>(), "---Hesap Seçiniz---")
                             @Html.ValidationMessageFor(model => model.hesapId, "", new { @class = "text-danger" })
                         </div>
                     </div>
@@ -47,7 +52,7 @@
                         </div>
                     </div>
                 </td>
-                <td><input type="submit" class="btn btn-warning" value="Gönder" /></td>
+                <td><input type="submit" class="btn btn-warning" id="virmangonder" value="Gönder" /></td>
             </tr>
 
         </tbody>
