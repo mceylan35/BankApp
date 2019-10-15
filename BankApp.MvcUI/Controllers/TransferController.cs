@@ -28,11 +28,19 @@ namespace BankApp.MvcUI.Controllers
 
             var gonderenhesap = db.tbl_Hesaplar.FirstOrDefault(i => i.hesapId==hesap.Gonderen );
             var alicihesap = db.tbl_Hesaplar.FirstOrDefault(i => i.hesapId == hesap.Alici);
+            var kisihesaplar = db.tbl_Hesaplar.Where(i => i.musteriNo == User.Identity.Name).ToList();
+            ViewBag.gonderen = new SelectList(kisihesaplar, "hesapId", "hesapNumarasi");
+            if (gonderenhesap.bakiye < hesap.Bakiye)
+            {
+                ModelState.AddModelError("", "Bakiye Hesaptan büyük.");
+                return HttpNotFound("Hata oluştu");
+            }
             gonderenhesap.bakiye = gonderenhesap.bakiye - hesap.Bakiye;
             alicihesap.bakiye = alicihesap.bakiye + hesap.Bakiye;
             db.SaveChanges();
-            var kisihesaplar = db.tbl_Hesaplar.Where(i => i.musteriNo == User.Identity.Name).ToList();
-            ViewBag.gonderen = new SelectList(kisihesaplar, "hesapId", "hesapNumarasi");
+            
+            
+         
             return View();
         }
         [HttpPost]
