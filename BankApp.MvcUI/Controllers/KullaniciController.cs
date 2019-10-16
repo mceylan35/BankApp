@@ -84,6 +84,7 @@ namespace BankApp.MvcUI.Controllers
                 db.tbl_Iletisim.Add(register2);
                 db.SaveChanges();
                 return RedirectToAction("Login");
+
             }
             else 
             {
