@@ -139,7 +139,7 @@ namespace BankApp.MvcUI.Controllers
 
         // GET: hesap/Delete/5
         [System.Web.Mvc.HttpPost]
-        public JsonResult sil(int ekNo)
+        public ActionResult sil(int ekNo)
         {
             tbl_Hesaplar hesap =db.tbl_Hesaplar.FirstOrDefault(t => t.musteriNo == User.Identity.Name && t.ekNo ==ekNo);
             hesap.aktiflik = false;
@@ -150,7 +150,7 @@ namespace BankApp.MvcUI.Controllers
                 db.SaveChanges();
                return Json("silindi", JsonRequestBehavior.AllowGet);
             }
-            return Json("Silinmedi", JsonRequestBehavior.AllowGet);
+            return HttpNotFound();
 
 
         }
