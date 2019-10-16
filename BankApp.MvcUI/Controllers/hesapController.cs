@@ -7,7 +7,6 @@ using System.Linq;
 using System.Net;
 using System.Security.Cryptography.X509Certificates;
 using System.Web;
-using System.Web.Http;
 using System.Web.Http.Results;
 using System.Web.Mvc;
 using BankApp.MvcUI.Entities;
@@ -138,8 +137,8 @@ namespace BankApp.MvcUI.Controllers
         }
 
         // GET: hesap/Delete/5
-        [System.Web.Mvc.HttpPost]
-        public JsonResult sil(int ekNo)
+        [HttpPost]
+        public ActionResult sil(int ekNo)
         {
             tbl_Hesaplar hesap =db.tbl_Hesaplar.FirstOrDefault(t => t.musteriNo == User.Identity.Name && t.ekNo ==ekNo);
             hesap.aktiflik = false;
@@ -150,7 +149,8 @@ namespace BankApp.MvcUI.Controllers
                 db.SaveChanges();
                return Json("silindi", JsonRequestBehavior.AllowGet);
             }
-            return Json("Silinmedi", JsonRequestBehavior.AllowGet);
+
+            return HttpNotFound();
 
 
         }
