@@ -141,6 +141,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\HavaleController.cs" />
     <Compile Include="Controllers\hesapController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KullaniciController.cs" />
@@ -176,6 +177,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="ModelView\HavaleViewModel.cs" />
     <Compile Include="ModelView\Hesaplar.cs" />
     <Compile Include="ModelView\Register.cs" />
     <Compile Include="ModelView\VirmanViewModel.cs" />
@@ -420,6 +422,7 @@
     <Content Include="Views\Transfer\Virman.cshtml" />
     <Content Include="Views\hesap\ParaYukle.cshtml" />
     <Content Include="Views\hesap\ParaCek.cshtml" />
+    <Content Include="Views\Havale\HavaleGonder.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
