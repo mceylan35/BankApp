@@ -7,6 +7,7 @@ using System.Linq;
 using System.Net;
 using System.Security.Cryptography.X509Certificates;
 using System.Web;
+using System.Web.Http.Results;
 using System.Web.Mvc;
 using BankApp.MvcUI.Entities;
 
@@ -45,7 +46,7 @@ namespace BankApp.MvcUI.Controllers
             ViewBag.yuklenicekHesap = new SelectList(Hesaplar, "hesapId", "hesapNumarasi");
             return View();
         }
-        [HttpPost]
+        [System.Web.Mvc.HttpPost]
         public ActionResult ParaYukle(ParaViewModel para)
         {
             var Hesaplar = db.tbl_Hesaplar.Where(t => t.musteriNo == User.Identity.Name && t.aktiflik == true).ToList();
@@ -82,7 +83,7 @@ namespace BankApp.MvcUI.Controllers
         }
 
         // GET: hesap/Create
-        [HttpPost]
+        [System.Web.Mvc.HttpPost]
         public JsonResult Create(string hesapNo)
         {
             int hesapSayisi = db.tbl_Hesaplar.Where(t => t.musteriNo ==hesapNo).Count();
@@ -121,7 +122,7 @@ namespace BankApp.MvcUI.Controllers
         // POST: hesap/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
+        [System.Web.Mvc.HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "hesapId,IBAN,musteriNo,hesapNumarasi,aktiflik,hesapTipi,bakiye,paraTipi,krediLimiti,hesapAcilisTarihi,hesapKapanisTarihi,hesapPuani,ekNo")] tbl_Hesaplar tbl_Hesaplar)
         {
@@ -148,6 +149,7 @@ namespace BankApp.MvcUI.Controllers
                 db.SaveChanges();
                return Json("silindi", JsonRequestBehavior.AllowGet);
             }
+
             return HttpNotFound();
 
 
